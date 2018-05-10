@@ -1,0 +1,802 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Sep 11, 2017, 12:51:40 AM
+    Author     : Ninja
+*/
+@import url(https://fonts.googleapis.com/css?family=Kaushan%20Script);
+@import url(https://fonts.googleapis.com/css?family=Lilita%20One);
+@import url(https://fonts.googleapis.com/css?family=Bangers);
+@import url(https://fonts.googleapis.com/css?family=Allan);
+@import url(https://fonts.googleapis.com/css?family=Caveat%20Brush);
+@import url(https://fonts.googleapis.com/css?family=Work+Sans:400,300,700|Open+Sans:400italic,300italic);
+
+
+body {
+	font-family: "Lucida Grande", "Lucida Sans Unicode", Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+
+.fullscreen-bg {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: -100;
+}
+
+.fullscreen-bg__video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+@media (min-aspect-ratio: 16/9) {
+  .fullscreen-bg__video {
+    height: 300%;
+    top: -100%;
+  }
+}
+
+@media (max-aspect-ratio: 16/9) {
+  .fullscreen-bg__video {
+    width: 300%;
+    left: -100%;
+  }
+}
+
+@media (max-width: 767px) {
+  .fullscreen-bg {
+    background: url('../img/videoframe.jpg') center center / cover no-repeat;
+  }
+  
+    .fullscreen-bg__video {
+    display: none;
+  }
+}
+/* Clearing floats */
+.cf:before,
+.cf:after {
+  content: " ";
+  display: table;
+}
+
+.cf:after {
+  clear: both;
+}
+
+.cf {
+  *zoom: 1;
+}
+
+/* Mini reset, no margins, paddings or bullets */
+.menu{
+  margin: 0;
+  padding: 0;
+  list-style: none;  
+}
+
+/* Main level */
+.menu {			
+  margin: 50px auto;
+  width: 500px;
+  width: -moz-fit-content;
+  width: -webkit-fit-content;
+  width: fit-content;
+  padding-top: 0;
+}
+
+.menu > li {
+  background: #000;
+  float: left;
+  position: relative;
+  transform: skewX(25deg);
+   
+  
+}
+
+.menu a {
+  display: block;
+  color: white;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-family: Bangers;
+  font-size: 18px;
+  opacity: 0.8;
+   
+}		
+
+.menu a:hover{
+    color: black;
+}
+.menu li:hover {
+  background: #fff;
+  opacity: 0.8;
+  box-shadow: 0 15px 20px rgba(0, 0, 0, 1);
+  color: black;
+}		
+
+.menu > li > a {
+  transform: skewX(-25deg);
+  padding: 1em 2em;
+  
+}
+
+/*Ends here*/
+.img-circle {
+ border: 5px solid #ddd;
+ margin: auto;
+ width: 250px;
+ height: 250px;
+ background-image: url("mypicture.jpg");
+ background-size: cover;
+ display: block;
+ border-radius: 150px;
+ -webkit-border-radius: 150px;
+ -moz-border-radius: 150px;
+ position: relative;
+ top: 100px;
+}
+.name {
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
+    text-align: center;
+    font-family: Kaushan Script;
+    font-size: 50px;
+    padding-top: 115px;
+}
+.title {
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
+    text-align: center;
+    font-family: Kaushan Script;
+    font-size: 30px;
+}
+.title1 {
+    color: black;
+    text-align: center;
+    font-family: Helvetica;
+    font-size: 30px;
+    padding-right: 1000px; 
+    padding-top: 40px;
+    letter-spacing: 2px;
+}
+
+.mybox {
+    background-color: #ddd;
+    width: 1290px;
+    height: 500px;
+    padding: 25px;
+    margin: 25px;
+    box-sizing: border-box; 
+}
+
+.mybox1 {
+    background-color: #ddd;
+    width: 1290px;
+    height: 700px;
+    padding: 25px;
+    margin: 25px;
+    box-sizing: border-box; 
+}
+      
+.newspaper {
+    -webkit-column-count: 2; /* Chrome, Safari, Opera */
+    -moz-column-count: 2; /* Firefox */
+    column-count: 2;
+    -webkit-column-width: 100px; /* Chrome, Safari, Opera */
+    -moz-column-width: 100px; /* Firefox */
+    column-width: 100px;
+    padding-left: 50px;
+    padding-top: 30px;
+    font-size: 23px;
+    text-align: justify;
+    font-family: Caveat Brush;
+    line-height: 25px;
+    
+}
+.newspaper1 {
+    -webkit-column-count: 2; /* Chrome, Safari, Opera */
+    -moz-column-count: 2; /* Firefox */
+    column-count: 2;
+    -webkit-column-width: 100px; /* Chrome, Safari, Opera */
+    -moz-column-width: 100px; /* Firefox */
+    column-width: 100px;
+    padding-left: 90px;
+    font-family: Caveat Brush;
+    font-size: 20px;
+    text-align: justify;
+    line-height: 30px;    
+}
+
+
+
+#slide{
+	width:96%;
+	}
+	
+* {
+	box-sizing: border-box
+}
+
+.mySlides {
+	display: none
+}
+
+.slideshow-container {
+	width: 1200px;
+	position: relative;
+	margin: -10px;
+
+}
+/* Next & previous buttons */
+.prev, .next {
+	cursor: pointer;
+	position: absolute;
+	top: 50%;
+	width: auto;
+	padding: 16px;
+	margin-top: -22px;
+	color: white;
+	font-weight: bold;
+	font-size: 18px;
+	transition: 0.6s ease;
+	border-radius: 0 3px 3px 0;
+}
+
+/* Position the "next button" to the right */
+.next {
+	right: -60px;
+	border-radius: 3px 0 0 3px;
+}
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+	background-color: rgba(0,0,0,0.8);
+}
+/* Caption text */
+.text {
+	color: #f2f2f2;
+	font-size: 15px;
+	padding: 8px 12px;
+	position: absolute;
+	bottom: 8px;
+	width: 100%;
+	text-align: center;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+	cursor: pointer;
+	height: 13px;
+	width: 13px;
+	margin: 0 2px;
+	background-color: #bbb;
+	border-radius: 50%;
+	display: inline-block;
+	transition: background-color 0.6s ease;
+}
+.active, .dot:hover {
+	background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+	-webkit-animation-name: fade;
+	-webkit-animation-duration: 2s;
+	animation-name: fade;
+	animation-duration: 2s;
+}
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
+}
+.four:hover 
+{
+       
+    -webkit-transform: scale(0.8);
+        -ms-transform: scale(0.8);
+        transform: scale(0.8);
+        
+}
+.five:hover
+{
+       -webkit-transform: scale(0.8);
+        -ms-transform: scale(0.8);
+        transform: scale(0.8);
+        
+}
+.six:hover
+{
+       -webkit-transform: scale(0.8);
+        -ms-transform: scale(0.8);
+        transform: scale(0.8);
+         
+}
+.seven:hover
+{
+        -webkit-transform: scale(0.8);
+        -ms-transform: scale(0.8);
+        transform: scale(0.8);
+        
+}
+.content{
+  display:inline-block;
+}
+
+.one{
+  width:650px;
+  height:699px;
+  background: black;
+  float:left;
+  position: relative;
+  left: 25px;
+  color: white;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  opacity: 1;
+}
+
+.two{
+  width:640px;
+  height:500px;
+  background: white;
+  float: right;
+  position: relative;
+  left: 25px;
+  color: black;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.four{
+  width:215px;
+  height:215px;
+  background: white;
+  float: right;
+  position: relative;
+  left: 200px;
+  color: black;
+}
+.five{
+  width:215px;
+  height:215px;
+  background: black;
+  float: right;
+  position: relative;
+  left: 200px;
+  color: white;
+}
+.six{
+  width:215px;
+  height:215px;
+  background: white;
+  float: right;
+  position: relative;
+  right: 180px;
+  color: black;
+}
+.seven{
+  width:215px;
+  height:215px;
+  background: black;
+  float: right;
+  position: relative;
+  right: 180px;
+  color: white;
+}
+
+
+.headstyle {
+     font-family: Bangers;
+     font-size: 30px;
+     padding-left: 65px;
+     padding-top: 50px;
+     letter-spacing: 2px;
+     
+}
+
+.headstyle1 {
+    font-family: Lilita One;
+     font-size: 20px;
+     padding-left: 40px;
+     padding-top: 45px;
+     letter-spacing: 5px;
+     
+     align-content: center;
+     text-justify: auto;
+}
+
+.headstyle2 {
+     font-family: Lilita One;
+     font-size: 20px;
+     padding-left: 40px;
+     padding-top: 45px;
+     letter-spacing: 5px;
+     
+     align-content: center;
+     text-justify: auto;
+}
+
+.headstyle3 {
+     font-family: Bangers;
+     font-size: 30px;
+     padding-left: 50px;
+     padding-top: 45px;
+     letter-spacing: 5px;
+     line-height: 200%;
+     align-content: space-around;
+}
+
+.qid {
+     font-family: Caveat Brush;
+     font-size: 30px;
+     padding-left: 50px;
+     padding-top: 45px;
+     line-height: 60px;
+     align-content: center;
+}
+
+.item-1, 
+.item-2, 
+.item-3 {
+	position: absolute;
+        display: block;
+	top: 550px;
+  
+  width: 60%;
+  
+  font-size: 2em;
+
+	animation-duration: 30s;
+	animation-timing-function: ease-in-out;
+	animation-iteration-count: infinite;
+}
+
+.item-1{
+	animation-name: anim-1;
+}
+
+.item-2{
+	animation-name: anim-2;
+}
+
+.item-3{
+	animation-name: anim-3;
+}
+
+@keyframes anim-1 {
+	0%, 8.3% { left: -100%; opacity: 0; }
+  8.3%,25% { left: 25%; opacity: 1; }
+  33.33%, 100% { left: 110%; opacity: 0; }
+}
+
+@keyframes anim-2 {
+	0%, 33.33% { left: -100%; opacity: 0; }
+  41.63%, 58.29% { left: 25%; opacity: 1; }
+  66.66%, 100% { left: 110%; opacity: 0; }
+}
+
+@keyframes anim-3 {
+	0%, 66.66% { left: -100%; opacity: 0; }
+  74.96%, 91.62% { left: 25%; opacity: 1; }
+  100% { left: 110%; opacity: 0; }
+}
+
+/* Style inputs with type="text", select elements and textareas */
+input[type=text], select {
+    width: 50%; /* Full width */
+    padding: 5px; /* Some padding */  
+    border: 1px solid #ccc; /* Gray border */
+    border-radius: 4px; /* Rounded borders */
+    box-sizing: border-box; /* Make sure that padding and width stays in place */
+    margin-top: 6px; /* Add a top margin */
+    margin-bottom: 16px; /* Bottom margin */
+    resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+    
+}
+textarea {
+    width: 90%; /* Full width */
+    padding: 5px; /* Some padding */  
+    border: 1px solid #ccc; /* Gray border */
+    border-radius: 4px; /* Rounded borders */
+    box-sizing: border-box; /* Make sure that padding and width stays in place */
+    margin-top: 6px; /* Add a top margin */
+    margin-bottom: 16px; /* Bottom margin */
+    resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+    
+}
+
+/* Style the submit button with a specific background color etc */
+input[type=submit] {
+    background-color: black;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* When moving the mouse over the submit button, add a darker green color */
+input[type=submit]:hover {
+    background-color: #3a3a3a;
+}
+
+/* Add a background color and some padding around the form */
+.container {
+    border-radius: 5px;
+    background-color: white;
+    padding: 20px;
+     font-family: Caveat Brush;
+     font-size: 30px;
+     padding-left: 50px;
+     padding-top: 45px;
+     text-shadow: 1px 1px 1px #000000;
+}
+
+footer {
+  background: #000;
+  padding: 10px 0;
+  text-align: center;
+   position: relative;
+    top: 60px;
+}
+footer a {
+  color: #70726F;
+  font-size: 20px;
+  padding: 10px;
+  border-right: 1px solid #70726F;
+  transition: all .5s ease;
+}
+footer a:first-child {
+  border-left: 1px solid #70726F;
+}
+footer a:hover {
+  color: white;
+}
+
+.foot{
+    color: #d2d8e0;
+    font-family: Allan;
+    font-size: 15px;
+    position: absolute;
+    left: 20px;
+    bottom: 0px;
+}
+.foot:hover {
+    color: white;
+}
+
+input[type="text"] {
+  display: inline;
+  margin: 10px;
+  width: 50%;
+  font-family: Caveat Brush;
+  font-size: 18px;
+  appearance: none;
+  box-shadow: none;
+  border-radius: 0px;
+}
+input[type="text"]:focus {
+  outline: black solid 1px;
+}
+textarea {
+  display: inline;
+  margin: 0;
+  width: 90%;
+  font-family: Caveat Brush;
+  font-size: 18px;
+  appearance: none;
+  box-shadow: none;
+  border-radius: 0px;
+}
+textarea:focus {
+  outline:black solid 1px;
+}
+
+input[type="submit"] {
+    color:#454545;
+    background:transparent;
+    border-width:2px;
+    border-style: solid;
+    border-color: #454545;
+    position:relative;
+    margin:1em;
+    display:inline-block;
+    padding:0.5em 1em;
+    transition:all 0.3s ease-in-out;
+    text-align:center;
+    font-family:Caveat Brush;
+    font-weight:bold;
+    font-size: 18px;
+    
+}
+input[type="submit"]:before, input[type="submit"]:after {
+    content:'';
+    display:block;
+    position:absolute;
+    border-color:#454545;
+    box-sizing:border-box;
+    border-style:solid;
+    width:1em;
+    height:1em;
+    transition:all 0.3s ease-in-out
+}
+input[type="submit"]:before {
+    top:-6px;
+    left:-6px;
+    border-width:2px 0 0 2px;
+    z-index:5;
+}
+input[type="submit"]:after {
+    bottom:-6px;
+    right:-6px;
+    border-width:0 2px 2px 0;
+}
+input[type="submit"]:hover:before, input[type="submit"]:hover:after 
+{
+    width:calc(100% + 12px);
+    height:calc(100% + 12px);
+    border-color:#000
+}
+input[type="submit"]:hover {
+    color:#fff;
+    background-color:#000;
+    border-color:#000
+}
+.substyle0 {
+    font-family: Lilita One;
+     font-size: 20px;
+     padding-left: 55px;
+     padding-top: 65px;
+}
+
+.substyle1 {
+    font-family: Lilita One;
+     font-size: 20px;
+     padding-left: 75px;
+     padding-top: 75px;
+     letter-spacing: 2px;
+}
+
+.substyle2 {
+    font-family: Lilita One;
+     font-size: 20px;
+     padding-left: 55px;
+     padding-top: 75px;
+    
+}
+
+.substyle3 {
+    font-family: Lilita One;
+     font-size: 22px;
+     padding-left: 75px;
+     padding-top: 75px;
+    
+}
+
+.mystyle {
+   font-family: Caveat Brush;
+    font-size: 30px;
+}
+.mystyle1 {
+   font-family: Caveat Brush;
+    font-size: 25px;
+    padding-left: 20px
+}
+
+.pad {
+    padding-left: 50px;
+}
+
+.pad1 {
+    padding-left: 20px;
+}
+
+.jbutton{
+  position: relative;
+  left: 180px;
+}
+  
+button {
+    color:#454545;
+    background:transparent;
+    border-width:2px;
+    border-style: solid;
+    border-color: #454545;
+    position:relative;
+    margin:1em;
+    display:inline-block;
+    padding:0.5em 1em;
+    transition:all 0.3s ease-in-out;
+    text-align:center;
+    font-family:Caveat Brush;
+    font-weight:bold
+    
+}
+button:before, button:after {
+    content:'';
+    display:block;
+    position:absolute;
+    border-color:#454545;
+    box-sizing:border-box;
+    border-style:solid;
+    width:1em;
+    height:1em;
+    transition:all 0.3s ease-in-out
+}
+button:before {
+    top:-6px;left:-6px;
+    border-width:2px 0 0 2px;
+    z-index:5;
+}
+button:after {
+    bottom:-6px;
+    right:-6px;
+    border-width:0 2px 2px 0;
+}
+button:hover:before, button:hover:after 
+{
+    width:calc(100% + 12px);
+    height:calc(100% + 12px);
+    border-color:#000
+}
+button:hover {
+    color:#fff;
+    background-color:#000;
+    border-color:#000
+}
+
+.jbutton {
+    max-width:960px;
+    text-align:center;
+    position:relative;
+    margin:auto;
+    font-size: 18px;
+}
+
+.nspbg {
+    background-image: url("about.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 200px;
+   filter: alpha(Opacity=20);
+}
+.nsp0bg {
+    background-image: url("grad.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 200px;
+   filter: alpha(Opacity=20);
+}
+.nsp1bg {
+    background-image: url("work.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 200px;
+   filter: alpha(Opacity=20);
+}
+.nsp2bg {
+    background-image: url("publications.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 200px;
+   filter: alpha(Opacity=20);
+}
+
